@@ -3,15 +3,11 @@
 #
 
 provider "aws" {
-  access_key = "${var.aws_access_key}"
-  secret_key = "${var.aws_secret_key}"
-  region     = "${var.region}"
+  region     = "ap-northeast-2"
 }
 
 provider "aws" {
   alias      = "us-east-1"
-  access_key = "${var.aws_access_key}"
-  secret_key = "${var.aws_secret_key}"
   region     = "us-east-1"
 }
 
@@ -21,7 +17,10 @@ provider "aws" {
 
 module "basic_auth" {
   source                 = "../../module"
-  basic_auth_credentials = "${var.basic_auth_credentials}"
+  basic_auth_credentials = {
+    user     = var.basic_auth_user
+    password = var.basic_auth_password
+  }
 
   # All Lambda@Edge functions must be put on us-east-1.
   providers = {

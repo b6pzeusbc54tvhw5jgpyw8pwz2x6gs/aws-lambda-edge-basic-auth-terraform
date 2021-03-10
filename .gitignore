@@ -4,3 +4,6 @@ terraform.tfstate
 terraform.tfstate.backup
 terraform.tfvars
 module/functions/basic-auth.zip
+
+/.idea/
+.envrc

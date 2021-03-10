@@ -54,6 +54,7 @@ resource "aws_cloudfront_distribution" "your_distribution" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| create | Whether to create this module. | bool | true | no |
 | basic\_auth\_credentials | Credentials for Basic Authentication. Pass a map composed of 'user' and 'password'. | map | n/a | yes |
 | function\_name | Lambda function name | string | `"basicAuth"` | no |
 
